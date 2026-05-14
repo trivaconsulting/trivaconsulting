@@ -64,9 +64,6 @@ export default function Pricing() {
           transition={{ duration: 0.55 }}
           className="text-center mb-16"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#E8541C" }}>
-            Pricing
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#0D0D0D" }}>
             Transparent. Scoped. No surprises.
           </h2>

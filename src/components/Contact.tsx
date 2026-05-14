@@ -25,9 +25,6 @@ export default function Contact() {
             }}
           />
           <div className="relative z-10 max-w-2xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest mb-6" style={{ color: "#E8541C" }}>
-              Ready to fix it?
-            </p>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5" style={{ color: "#fff" }}>
               Most STR operators have the same problems.{" "}
               <span style={{ color: "#E8541C" }}>The ones who fix them first win.</span>

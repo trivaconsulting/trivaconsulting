@@ -60,9 +60,6 @@ export default function Services() {
           transition={{ duration: 0.55 }}
           className="max-w-xl mb-16"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#E8541C" }}>
-            The Triva Stack
-          </p>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ color: "#0D0D0D" }}>
             Five systems.
             <br />

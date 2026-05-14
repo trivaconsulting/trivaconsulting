@@ -41,9 +41,6 @@ export default function Problem() {
             transition={{ duration: 0.55 }}
             className="md:sticky md:top-32"
           >
-            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#E8541C" }}>
-              Sound familiar?
-            </p>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5" style={{ color: "#0D0D0D" }}>
               You already have
               the software.

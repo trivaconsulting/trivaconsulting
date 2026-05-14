@@ -46,9 +46,6 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#E8541C" }}>
-            FAQ
-          </p>
           <h2 className="text-4xl font-bold" style={{ color: "#0D0D0D" }}>Common questions.</h2>
         </motion.div>
 

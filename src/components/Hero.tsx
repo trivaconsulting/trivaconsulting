@@ -16,17 +16,6 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
         {/* Left — copy */}
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.45 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold mb-7"
-            style={{ background: "rgba(232,84,28,0.07)", color: "#E8541C", border: "1px solid rgba(232,84,28,0.15)" }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#E8541C" }} />
-            Built for STR management companies
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
