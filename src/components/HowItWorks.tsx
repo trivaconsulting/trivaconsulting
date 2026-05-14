@@ -30,12 +30,23 @@ const steps = [
   },
 ];
 
-// Left-to-right path: card centers at x≈160,500,840 in viewBox 0 0 1000 750.
-// Two asymmetric dips — first valley sits close to card 01 (early plunge, slow rise),
-// second valley sits close to card 03 (slow decline, late plunge). Both dip to y≈730,
-// which lands in the visible bottom-padding space below the card bodies.
-const FLOW_PATH =
-  "M -80 490 C 350 1032, 450 490, 500 490 C 600 490, 700 1032, 1080 490";
+// Organic left-to-right path — deliberately NOT a sine wave.
+// Each segment has a different "lean": some linger at the valley before rising,
+// some plunge immediately, some have a wide flat top. Peaks and valleys are all
+// at different y values so no two periods look the same.
+//
+// Card x-centers ≈ 155, 510, 855 in viewBox 0 0 1000 750.
+// Valley depths: 730 (deep) → 680 (shallow) → 720 (medium).
+// Peak heights:  270 (tall)  → 360 (lower).
+const FLOW_PATH = [
+  "M -80 380",
+  "C 0 380, 60 730, 155 730",     // flat entry → steep plunge behind card 01
+  "C 250 730, 295 270, 330 270",  // lingers at valley → sharp spike to high peak
+  "C 365 270, 420 680, 510 680",  // flat at top → smooth drop behind card 02
+  "C 560 680, 660 360, 680 360",  // medium rise to lower peak
+  "C 700 360, 780 720, 855 720",  // immediate drop → valley behind card 03
+  "C 920 720, 1020 360, 1080 360", // slow linger → gradual exit rise
+].join(" ");
 
 export default function HowItWorks() {
   const ref = useRef(null);
