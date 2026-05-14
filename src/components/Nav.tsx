@@ -4,6 +4,12 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
+const links = [
+  { label: "Services", href: "/services" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/#pricing" },
+];
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -25,14 +31,12 @@ export default function Nav() {
         }}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Image src="/logo-black.png" alt="Triva" width={96} height={32} className="h-7 w-auto" priority />
+          <a href="/">
+            <Image src="/logo-black.png" alt="Triva" width={96} height={32} className="h-7 w-auto" priority />
+          </a>
 
           <div className="hidden md:flex items-center gap-10">
-            {[
-              { label: "Services", href: "/services" },
-              { label: "How It Works", href: "#how-it-works" },
-              { label: "Pricing", href: "#pricing" },
-            ].map(({ label, href }) => (
+            {links.map(({ label, href }) => (
               <a
                 key={label}
                 href={href}
@@ -69,11 +73,7 @@ export default function Nav() {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="md:hidden border-t px-6 pb-6 pt-4 flex flex-col gap-4" style={{ borderColor: "#f0f0f0" }}>
-            {[
-              { label: "Services", href: "/services" },
-              { label: "How It Works", href: "#how-it-works" },
-              { label: "Pricing", href: "#pricing" },
-            ].map(({ label, href }) => (
+            {links.map(({ label, href }) => (
               <a
                 key={label}
                 href={href}
