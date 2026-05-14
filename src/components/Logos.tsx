@@ -1,13 +1,51 @@
 "use client";
 
-export default function Logos() {
-  const tools = [
-    "Guesty", "Hostaway", "OwnerRez", "Hospitable",
-    "PriceLabs", "Breezeway", "Turno", "GoHighLevel",
-  ];
+import { useState } from "react";
 
-  // 6 copies: animation moves -50% (3 copy widths). The other 3 copies fill the viewport.
-  // Guarantees no gap on any screen width up to ~3k px.
+const tools = [
+  { name: "Guesty",        domain: "guesty.com" },
+  { name: "Hostaway",      domain: "hostaway.com" },
+  { name: "OwnerRez",      domain: "ownerrez.com" },
+  { name: "Hospitable",    domain: "hospitable.com" },
+  { name: "PriceLabs",     domain: "pricelabs.co" },
+  { name: "Breezeway",     domain: "breezeway.io" },
+  { name: "Turno",         domain: "turno.com" },
+  { name: "GoHighLevel",   domain: "gohighlevel.com" },
+];
+
+function LogoItem({ name, domain }: { name: string; domain: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return (
+      <span
+        className="text-sm font-semibold whitespace-nowrap"
+        style={{ color: "#bbb", letterSpacing: "0.04em" }}
+      >
+        {name}
+      </span>
+    );
+  }
+
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={`https://logo.clearbit.com/${domain}`}
+      alt={name}
+      onError={() => setFailed(true)}
+      style={{
+        height: 28,
+        width: "auto",
+        maxWidth: 120,
+        objectFit: "contain",
+        filter: "grayscale(100%)",
+        opacity: 0.45,
+      }}
+    />
+  );
+}
+
+export default function Logos() {
   const items = [...tools, ...tools, ...tools, ...tools, ...tools, ...tools];
 
   return (
@@ -21,14 +59,14 @@ export default function Logos() {
           to { transform: translateX(-50%); }
         }
         .marquee-inner {
-          animation: scroll-left 36s linear infinite;
+          animation: scroll-left 55s linear infinite;
         }
         .marquee-inner:hover {
           animation-play-state: paused;
         }
       `}</style>
 
-      <p className="text-xs font-semibold uppercase tracking-widest text-center mb-7" style={{ color: "#ccc" }}>
+      <p className="text-xs font-semibold uppercase tracking-widest text-center mb-8" style={{ color: "#ccc" }}>
         Works with your existing stack
       </p>
 
@@ -39,19 +77,9 @@ export default function Logos() {
           WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         }}
       >
-        <div className="marquee-inner flex gap-3 w-max">
+        <div className="marquee-inner flex items-center gap-16 w-max">
           {items.map((t, i) => (
-            <span
-              key={i}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap"
-              style={{ border: "1px solid #EFEFEF", color: "#888", background: "#fff" }}
-            >
-              <span
-                className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ background: "#E8541C", opacity: 0.5 }}
-              />
-              {t}
-            </span>
+            <LogoItem key={i} name={t.name} domain={t.domain} />
           ))}
         </div>
       </div>
