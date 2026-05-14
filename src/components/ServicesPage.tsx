@@ -86,7 +86,7 @@ function ProcessStrip() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-16 px-6 border-b" style={{ borderColor: "#F0F0F0", background: "#FAFAFA" }}>
+    <section ref={ref} className="py-16 px-6 border-b" style={{ borderColor: "#F0F0F0", background: "#faf9f7" }}>
       <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
         {steps.map((step, i) => (
           <motion.div
@@ -110,16 +110,26 @@ function SystemsGrid() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-white">
+    <section ref={ref} className="py-24 px-6" style={{ background: "#faf9f7" }}>
       <div className="max-w-5xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.4 }}
-          className="text-xs font-semibold uppercase tracking-widest mb-10"
+          className="text-xs font-semibold uppercase tracking-widest mb-3"
           style={{ color: "#bbb" }}
         >
-          Systems we build
+          Example systems we&apos;ve already built
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.45, delay: 0.08 }}
+          className="text-base mb-10 max-w-2xl"
+          style={{ color: "#999" }}
+        >
+          These aren&apos;t templates or packages — they&apos;re real systems deployed for real operators. Your build starts from scratch, specific to your stack and your problems.
         </motion.p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -179,7 +189,7 @@ function SystemsGrid() {
 
 function PageHero() {
   return (
-    <section className="pt-32 pb-0 px-6 bg-white">
+    <section className="pt-32 pb-0 px-6" style={{ background: "#faf9f7" }}>
       <div className="max-w-5xl mx-auto pb-16 border-b" style={{ borderColor: "#F0F0F0" }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -218,7 +228,7 @@ function BottomCTA() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#FAFAFA" }}>
+    <section ref={ref} className="py-24 px-6" style={{ background: "#faf9f7" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

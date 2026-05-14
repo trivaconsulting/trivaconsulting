@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center px-6 pt-24 pb-20 overflow-hidden bg-white">
+    <section className="relative flex items-center px-6 pt-24 pb-6 overflow-hidden" style={{ minHeight: "88vh" }}>
       {/* Subtle top-right blob */}
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -93,7 +93,7 @@ export default function Hero() {
           className="hidden md:block relative"
         >
           {/* Main photo */}
-          <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.12)" }}>
+          <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.12)", border: "1px solid rgba(232,84,28,0.22)" }}>
             <Image
               src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=85&auto=format&fit=crop"
               alt="Short-term rental property"
@@ -109,64 +109,164 @@ export default function Hero() {
             />
           </div>
 
-          {/* Floating card top left */}
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-            className="absolute -left-6 top-8 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3"
-            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.1)", border: "1px solid #f0f0f0", minWidth: 220 }}
-          >
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
-              style={{ background: "rgba(232,84,28,0.08)" }}
-            >
-              ✅
-            </div>
-            <div>
-              <p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Cleaner dispatched</p>
-              <p className="text-xs" style={{ color: "#aaa" }}>Unit 4B · auto-triggered</p>
-            </div>
+          {/* 1 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 0.5 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: -14, left: -22, transform: "rotate(-3deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 195, zIndex: 12 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>✅</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Cleaner dispatched</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 4B · right now</p></div>
           </motion.div>
 
-          {/* Floating card bottom right */}
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.9 }}
-            className="absolute -right-6 bottom-10 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3"
-            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.1)", border: "1px solid #f0f0f0", minWidth: 220 }}
-          >
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
-              style={{ background: "rgba(232,84,28,0.08)" }}
-            >
-              📊
-            </div>
-            <div>
-              <p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Owner report sent</p>
-              <p className="text-xs" style={{ color: "#aaa" }}>March summary · 7 owners</p>
-            </div>
+          {/* 2 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 0.7 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 18, left: "30%", transform: "rotate(2deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 182, zIndex: 14 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(220,38,38,0.08)" }}>🚨</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Leak reported</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 7 · urgent</p></div>
           </motion.div>
 
-          {/* Floating card bottom left */}
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.05 }}
-            className="absolute left-4 bottom-6 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3"
-            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.1)", border: "1px solid #f0f0f0", minWidth: 200 }}
-          >
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
-              style={{ background: "rgba(232,84,28,0.08)" }}
-            >
-              ⭐
-            </div>
-            <div>
-              <p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Review requested</p>
-              <p className="text-xs" style={{ color: "#aaa" }}>Post-checkout · auto-sent</p>
-            </div>
+          {/* 3 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 0.9 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: -8, right: -18, transform: "rotate(2.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 190, zIndex: 11 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>📅</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>New booking in</p><p className="text-[11px]" style={{ color: "#aaa" }}>Check-in Friday</p></div>
+          </motion.div>
+
+          {/* 4 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 1.1 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 90, left: "8%", transform: "rotate(-2deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 188, zIndex: 13 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>💬</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Guest asking</p><p className="text-[11px]" style={{ color: "#aaa" }}>Early check-in · 11am</p></div>
+          </motion.div>
+
+          {/* 5 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 1.3 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 110, right: "4%", transform: "rotate(-3deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 185, zIndex: 10 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>📈</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Rates updated</p><p className="text-[11px]" style={{ color: "#aaa" }}>+18% this weekend</p></div>
+          </motion.div>
+
+          {/* 6 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 1.5 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 210, left: "22%", transform: "rotate(3deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 192, zIndex: 15 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>⏰</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Late checkout</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 9 · rescheduling</p></div>
+          </motion.div>
+
+          {/* 7 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 1.7 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 260, left: -26, transform: "rotate(-1.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 185, zIndex: 9 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>🔧</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Fix needed</p><p className="text-[11px]" style={{ color: "#aaa" }}>HVAC · Unit 2A</p></div>
+          </motion.div>
+
+          {/* 8 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 1.9 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 295, right: "6%", transform: "rotate(2deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 188, zIndex: 12 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>👤</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Owner asking</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 12 · wants update</p></div>
+          </motion.div>
+
+          {/* 9 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 2.1 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ bottom: 60, left: "10%", transform: "rotate(-2.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 185, zIndex: 11 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>⭐</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Review request</p><p className="text-[11px]" style={{ color: "#aaa" }}>Post-checkout · auto</p></div>
+          </motion.div>
+
+          {/* 10 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 2.3 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ bottom: -16, right: -20, transform: "rotate(1.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 195, zIndex: 10 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>📊</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Owner report due</p><p className="text-[11px]" style={{ color: "#aaa" }}>7 owners · this week</p></div>
+          </motion.div>
+
+          {/* 11 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 2.5 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 52, left: "47%", transform: "rotate(-4.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 178, zIndex: 16 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>🔑</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Lockbox reset</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 3 · guest locked out</p></div>
+          </motion.div>
+
+          {/* 12 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 2.7 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 178, left: -14, transform: "rotate(5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 182, zIndex: 8 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>📞</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Vendor callback</p><p className="text-[11px]" style={{ color: "#aaa" }}>Plumber · Unit 11</p></div>
+          </motion.div>
+
+          {/* 13 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 2.9 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 148, left: "52%", transform: "rotate(-3.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 176, zIndex: 13 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>🗓️</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Calendar gap</p><p className="text-[11px]" style={{ color: "#aaa" }}>3 nights · no booking</p></div>
+          </motion.div>
+
+          {/* 14 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 3.1 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 338, left: "36%", transform: "rotate(4deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 180, zIndex: 14 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>💰</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Payout pending</p><p className="text-[11px]" style={{ color: "#aaa" }}>$3,200 · 6 owners</p></div>
+          </motion.div>
+
+          {/* 15 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 3.3 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ bottom: -12, left: "54%", transform: "rotate(-4deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 174, zIndex: 11 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>🏠</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Owner message</p><p className="text-[11px]" style={{ color: "#aaa" }}>Re: pool fence</p></div>
+          </motion.div>
+
+          {/* 16 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 3.5 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 168, right: -22, transform: "rotate(3.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 180, zIndex: 9 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>💳</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Charge failed</p><p className="text-[11px]" style={{ color: "#aaa" }}>Guest · Unit 3</p></div>
+          </motion.div>
+
+          {/* 17 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 3.7 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 315, left: "14%", transform: "rotate(2deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 178, zIndex: 13 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>📍</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Check-in issue</p><p className="text-[11px]" style={{ color: "#aaa" }}>Wrong address sent</p></div>
+          </motion.div>
+
+          {/* 18 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 3.9 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ bottom: 95, right: -16, transform: "rotate(-3deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 176, zIndex: 10 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>🌡️</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>AC complaint</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 5 · too warm</p></div>
+          </motion.div>
+
+          {/* 19 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 4.1 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 235, right: "7%", transform: "rotate(-1.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 182, zIndex: 11 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>🧹</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Deep clean overdue</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 6 · flagged</p></div>
+          </motion.div>
+
+          {/* 20 */}
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.35, delay: 4.3 }}
+            className="absolute bg-white rounded-2xl px-4 py-3 flex items-center gap-3"
+            style={{ top: 395, left: -18, transform: "rotate(-2.5deg)", boxShadow: "0 3px 0 rgba(0,0,0,0.18), 0 8px 24px rgba(0,0,0,0.14), 0 16px 36px rgba(0,0,0,0.08)", border: "1px solid #ebebeb", minWidth: 178, zIndex: 8 }}>
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center text-sm flex-shrink-0" style={{ background: "rgba(232,84,28,0.08)" }}>📋</div>
+            <div><p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Inspection due</p><p className="text-[11px]" style={{ color: "#aaa" }}>Unit 8 · this week</p></div>
           </motion.div>
         </motion.div>
       </div>

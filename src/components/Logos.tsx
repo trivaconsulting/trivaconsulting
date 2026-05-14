@@ -18,7 +18,7 @@ export default function Logos() {
 
   return (
     <section
-      className="py-10 overflow-hidden"
+      className="pt-4 pb-10 overflow-hidden"
       style={{ background: "#FAFAFA", borderTop: "1px solid #F0F0F0", borderBottom: "1px solid #F0F0F0" }}
     >
       <style>{`
@@ -27,14 +27,14 @@ export default function Logos() {
           to { transform: translateX(-50%); }
         }
         .marquee-inner {
-          animation: scroll-left 55s linear infinite;
+          animation: scroll-left 80s linear infinite;
         }
         .marquee-inner:hover {
           animation-play-state: paused;
         }
       `}</style>
 
-      <p className="text-xs font-semibold uppercase tracking-widest text-center mb-8" style={{ color: "#ccc" }}>
+      <p className="text-xs font-semibold uppercase tracking-widest text-center mb-8" style={{ color: "#888" }}>
         Works with your existing stack
       </p>
 
