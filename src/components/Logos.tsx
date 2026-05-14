@@ -1,49 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import Image from "next/image";
 
 const tools = [
-  { name: "Guesty",       domain: "guesty.com" },
-  { name: "Hostaway",     domain: "hostaway.com" },
-  { name: "OwnerRez",     domain: "ownerrez.com" },
-  { name: "Hospitable",   domain: "hospitable.com" },
-  { name: "PriceLabs",    domain: "pricelabs.co" },
-  { name: "Breezeway",    domain: "breezeway.io" },
-  { name: "Turno",        domain: "turno.com" },
-  { name: "GoHighLevel",  domain: "gohighlevel.com" },
+  { name: "Guesty",       src: "/logos/guesty.svg",       w: 100, h: 30 },
+  { name: "Hostaway",     src: "/logos/hostaway.svg",     w: 130, h: 30 },
+  { name: "OwnerRez",     src: "/logos/ownerrez.png",     w: 130, h: 21 },
+  { name: "Hospitable",   src: "/logos/hospitable.svg",   w: 140, h: 30 },
+  { name: "PriceLabs",    src: "/logos/pricelabs.svg",    w: 120, h: 30 },
+  { name: "Breezeway",    src: "/logos/breezeway.svg",    w: 140, h: 30 },
+  { name: "Turno",        src: "/logos/turno.svg",        w: 90,  h: 30 },
+  { name: "GoHighLevel",  src: "/logos/gohighlevel.png",  w: 130, h: 28 },
 ];
-
-function LogoItem({ name, domain }: { name: string; domain: string }) {
-  const [failed, setFailed] = useState(false);
-
-  if (failed) {
-    return (
-      <span
-        className="text-sm font-semibold whitespace-nowrap tracking-wide"
-        style={{ color: "#bbb" }}
-      >
-        {name}
-      </span>
-    );
-  }
-
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={`https://logos.apistemic.com/${domain}`}
-      alt={name}
-      onError={() => setFailed(true)}
-      style={{
-        height: 30,
-        width: "auto",
-        maxWidth: 130,
-        objectFit: "contain",
-        filter: "grayscale(100%)",
-        opacity: 0.45,
-      }}
-    />
-  );
-}
 
 export default function Logos() {
   const items = [...tools, ...tools, ...tools, ...tools, ...tools, ...tools];
@@ -79,7 +47,22 @@ export default function Logos() {
       >
         <div className="marquee-inner flex items-center gap-16 w-max">
           {items.map((t, i) => (
-            <LogoItem key={i} name={t.name} domain={t.domain} />
+            <Image
+              key={i}
+              src={t.src}
+              alt={t.name}
+              width={t.w}
+              height={t.h}
+              style={{
+                width: "auto",
+                height: t.h,
+                maxWidth: 140,
+                objectFit: "contain",
+                filter: "grayscale(100%)",
+                opacity: 0.45,
+              }}
+              unoptimized
+            />
           ))}
         </div>
       </div>
