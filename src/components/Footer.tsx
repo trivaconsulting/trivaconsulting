@@ -12,16 +12,19 @@ export default function Footer() {
           className="h-7 w-auto opacity-50"
         />
         <div className="flex gap-8">
-          <a href="#services" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
+          <a href="/services" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
             Services
           </a>
-          <a href="#how-it-works" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
+          <a href="/#how-it-works" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
             How It Works
           </a>
-          <a href="#pricing" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
+          <a href="/#pricing" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
             Pricing
           </a>
-          <a href="#contact" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
+          <a href="/faq" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
+            FAQ
+          </a>
+          <a href="/#contact" className="text-sm transition-colors hover:text-[#0D0D0D]" style={{ color: "#bbb" }}>
             Contact
           </a>
         </div>

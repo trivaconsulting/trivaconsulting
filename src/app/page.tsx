@@ -4,7 +4,6 @@ import Logos from "@/components/Logos";
 import Problem from "@/components/Problem";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
-import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -18,7 +17,6 @@ export default function Home() {
         <Problem />
         <HowItWorks />
         <Pricing />
-        <FAQ />
         <Contact />
       </main>
       <Footer />
