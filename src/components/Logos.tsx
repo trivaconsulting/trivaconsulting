@@ -58,8 +58,8 @@ export default function Logos() {
                 height: t.h,
                 maxWidth: 140,
                 objectFit: "contain",
-                filter: "grayscale(100%)",
-                opacity: 0.65,
+                filter: "brightness(0)",
+                opacity: 1,
               }}
               unoptimized
             />
