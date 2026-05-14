@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "logo.clearbit.com",
+        hostname: "logos.apistemic.com",
       },
     ],
   },

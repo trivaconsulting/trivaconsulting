@@ -3,14 +3,14 @@
 import { useState } from "react";
 
 const tools = [
-  { name: "Guesty",        domain: "guesty.com" },
-  { name: "Hostaway",      domain: "hostaway.com" },
-  { name: "OwnerRez",      domain: "ownerrez.com" },
-  { name: "Hospitable",    domain: "hospitable.com" },
-  { name: "PriceLabs",     domain: "pricelabs.co" },
-  { name: "Breezeway",     domain: "breezeway.io" },
-  { name: "Turno",         domain: "turno.com" },
-  { name: "GoHighLevel",   domain: "gohighlevel.com" },
+  { name: "Guesty",       domain: "guesty.com" },
+  { name: "Hostaway",     domain: "hostaway.com" },
+  { name: "OwnerRez",     domain: "ownerrez.com" },
+  { name: "Hospitable",   domain: "hospitable.com" },
+  { name: "PriceLabs",    domain: "pricelabs.co" },
+  { name: "Breezeway",    domain: "breezeway.io" },
+  { name: "Turno",        domain: "turno.com" },
+  { name: "GoHighLevel",  domain: "gohighlevel.com" },
 ];
 
 function LogoItem({ name, domain }: { name: string; domain: string }) {
@@ -19,8 +19,8 @@ function LogoItem({ name, domain }: { name: string; domain: string }) {
   if (failed) {
     return (
       <span
-        className="text-sm font-semibold whitespace-nowrap"
-        style={{ color: "#bbb", letterSpacing: "0.04em" }}
+        className="text-sm font-semibold whitespace-nowrap tracking-wide"
+        style={{ color: "#bbb" }}
       >
         {name}
       </span>
@@ -30,13 +30,13 @@ function LogoItem({ name, domain }: { name: string; domain: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={`https://logo.clearbit.com/${domain}`}
+      src={`https://logos.apistemic.com/${domain}`}
       alt={name}
       onError={() => setFailed(true)}
       style={{
-        height: 28,
+        height: 30,
         width: "auto",
-        maxWidth: 120,
+        maxWidth: 130,
         objectFit: "contain",
         filter: "grayscale(100%)",
         opacity: 0.45,
