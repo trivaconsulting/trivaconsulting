@@ -87,16 +87,22 @@ function ProcessStrip() {
 
   return (
     <section ref={ref} className="py-16 px-6 border-b" style={{ borderColor: "#F0F0F0", background: "#faf9f7" }}>
-      <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
         {steps.map((step, i) => (
           <motion.div
             key={step.number}
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.45, delay: 0.1 * i }}
+            className="relative"
           >
-            <p className="text-xs font-mono mb-2" style={{ color: "#E8541C" }}>{step.number}</p>
-            <h3 className="text-base font-bold mb-2" style={{ color: "#0D0D0D" }}>{step.title}</h3>
+            <p
+              className="font-mono font-black leading-none select-none"
+              style={{ fontSize: 72, color: "rgba(232,84,28,0.09)", marginBottom: -16 }}
+            >
+              {step.number}
+            </p>
+            <h3 className="text-base font-bold mb-2 relative z-10" style={{ color: "#0D0D0D" }}>{step.title}</h3>
             <p className="text-sm leading-relaxed" style={{ color: "#888" }}>{step.description}</p>
           </motion.div>
         ))}
