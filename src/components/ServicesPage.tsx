@@ -10,6 +10,7 @@ import {
   Calendar,
   ShieldCheck,
   ArrowRight,
+  Check,
 } from "lucide-react";
 
 const systems = [
@@ -19,7 +20,7 @@ const systems = [
     gap: "Fills the gap Guesty's reporting leaves",
     description:
       "Revenue, expenses, maintenance costs, and distributions reconciled against actual trust balances, auto-generated and emailed to owners monthly. Stops the calls that kill trust.",
-    outcomes: ["PMS + QuickBooks/Xero", "Trust account reconciliation", "Branded PDF, sent on schedule"],
+    outcomes: ["PMS + QuickBooks/Xero sync", "Trust account reconciliation", "Branded PDF, sent on schedule"],
   },
   {
     icon: Wrench,
@@ -34,7 +35,7 @@ const systems = [
     name: "Owner Acquisition Pipeline",
     gap: "The CRM Guesty and Hostaway don't include",
     description:
-      "STR companies lose 30 to 35% of their portfolio annually. This replaces the spreadsheet: AI-generated market analysis per prospect, automated follow-up, fast onboarding, and a 24/7 AI chat widget for inbound owner inquiries.",
+      "STR companies lose 30–35% of their portfolio annually. This replaces the spreadsheet: AI-generated market analysis per prospect, automated follow-up, fast onboarding, and a 24/7 AI chat widget for inbound owner inquiries.",
     outcomes: ["Lead capture + follow-up sequences", "Market analysis auto-generated", "Onboarding checklist automated"],
   },
   {
@@ -81,108 +82,171 @@ const steps = [
   },
 ];
 
-function ProcessStrip() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
+function PageHero() {
   return (
-    <section ref={ref} className="py-16 px-6 border-b" style={{ borderColor: "#F0F0F0", background: "#faf9f7" }}>
-      <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
-        {steps.map((step, i) => (
-          <motion.div
-            key={step.number}
-            initial={{ opacity: 0, y: 16 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.45, delay: 0.1 * i }}
-            className="relative"
+    <section className="pt-32 pb-24 px-6" style={{ background: "#0D0D0D" }}>
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="text-xs font-mono uppercase tracking-[0.18em] mb-8" style={{ color: "#E8541C" }}>
+            AI Operations · Short-Term Rental
+          </p>
+          <h1
+            className="font-bold leading-[1.05] tracking-tight mb-7"
+            style={{ fontSize: "clamp(2.6rem, 6vw, 4.5rem)", color: "#fff", maxWidth: 720 }}
           >
-            <p
-              className="font-mono font-black leading-none select-none"
-              style={{ fontSize: 72, color: "rgba(232,84,28,0.09)", marginBottom: -16 }}
+            The back office your PMS was never going to build.
+          </h1>
+          <p className="text-lg mb-10 max-w-xl leading-relaxed" style={{ color: "#666" }}>
+            Custom automation that plugs into Guesty, Hostaway, QuickBooks, and whatever else you run. We build it, maintain it, and hand you the keys.
+          </p>
+          <div className="flex flex-wrap gap-3 mb-16">
+            <a
+              href="https://calendly.com/jacob-trivaconsulting/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5"
+              style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 20px rgba(232,84,28,0.35)" }}
             >
-              {step.number}
-            </p>
-            <h3 className="text-base font-bold mb-2 relative z-10" style={{ color: "#0D0D0D" }}>{step.title}</h3>
-            <p className="text-sm leading-relaxed" style={{ color: "#888" }}>{step.description}</p>
-          </motion.div>
-        ))}
+              Book a Free Strategy Call <ArrowRight size={14} />
+            </a>
+            <a
+              href="#systems"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:border-white/20"
+              style={{ background: "transparent", color: "#777", border: "1px solid rgba(255,255,255,0.1)" }}
+            >
+              See what we build
+            </a>
+          </div>
+          <div
+            className="flex flex-wrap gap-10 pt-8"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+          >
+            {[
+              { val: "6", label: "core systems" },
+              { val: "2–3 wk", label: "deployment" },
+              { val: "Month-to-month", label: "no lock-in" },
+            ].map((s) => (
+              <div key={s.label}>
+                <p className="text-xl font-bold mb-0.5" style={{ color: "#fff" }}>{s.val}</p>
+                <p className="text-xs font-mono" style={{ color: "#444" }}>{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
 }
 
-function SystemsGrid() {
+function ProcessStrip() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#faf9f7" }}>
+    <section ref={ref} className="py-16 px-6" style={{ background: "#fff", borderBottom: "1px solid #EFEFEF" }}>
       <div className="max-w-5xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.4 }}
-          className="text-xs font-semibold uppercase tracking-widest mb-3"
-          style={{ color: "#bbb" }}
-        >
-          Example systems we&apos;ve already built
-        </motion.p>
+        <div className="relative flex flex-col md:flex-row gap-10 md:gap-0">
+          <div
+            className="hidden md:block absolute"
+            style={{ top: 20, left: 20, right: 20, height: 1, background: "#F0F0F0" }}
+          />
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 14 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.45, delay: 0.13 * i }}
+              className="flex-1 md:px-8 relative z-10"
+            >
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center font-mono text-xs font-bold mb-5 flex-shrink-0"
+                style={{
+                  background: i === 0 ? "#E8541C" : "#fff",
+                  color: i === 0 ? "#fff" : "#ccc",
+                  border: i === 0 ? "none" : "1px solid #E8E8E8",
+                }}
+              >
+                {step.number}
+              </div>
+              <h3 className="text-sm font-bold mb-2" style={{ color: "#0D0D0D" }}>{step.title}</h3>
+              <p className="text-sm leading-relaxed" style={{ color: "#999" }}>{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
+function SystemsSection() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  return (
+    <section ref={ref} id="systems" className="py-24 px-6" style={{ background: "#faf9f7" }}>
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.45, delay: 0.08 }}
-          className="text-base mb-10 max-w-2xl"
-          style={{ color: "#999" }}
+          transition={{ duration: 0.45 }}
+          className="mb-16"
         >
-          These aren&apos;t templates or packages — they&apos;re real systems deployed for real operators. Your build starts from scratch, specific to your stack and your problems.
-        </motion.p>
+          <p className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#bbb" }}>
+            What we build
+          </p>
+          <h2 className="text-4xl font-bold leading-tight" style={{ color: "#0D0D0D", maxWidth: 480 }}>
+            Six systems. Every one fills a specific gap.
+          </h2>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div style={{ borderTop: "1px solid #EBEBEB" }}>
           {systems.map((s, i) => {
             const Icon = s.icon;
             return (
               <motion.div
                 key={s.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 18 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: 0.06 * i }}
-                className="rounded-2xl p-6 bg-white flex flex-col"
-                style={{
-                  border: "1px solid #EFEFEF",
-                  boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-                }}
+                transition={{ duration: 0.42, delay: 0.07 * i }}
+                className="py-10 grid md:grid-cols-2 gap-8 md:gap-16"
+                style={{ borderBottom: "1px solid #EBEBEB" }}
               >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center mb-4 flex-shrink-0"
-                  style={{ background: "rgba(232,84,28,0.08)", color: "#E8541C" }}
-                >
-                  <Icon size={18} />
+                {/* Left col */}
+                <div className="flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div
+                        className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                        style={{ background: "rgba(232,84,28,0.08)", color: "#E8541C" }}
+                      >
+                        <Icon size={16} />
+                      </div>
+                      <h3 className="text-base font-bold" style={{ color: "#0D0D0D" }}>{s.name}</h3>
+                    </div>
+                    <span
+                      className="inline-block text-xs font-mono px-2.5 py-1 rounded"
+                      style={{ background: "rgba(232,84,28,0.07)", color: "#C04010" }}
+                    >
+                      {s.gap}
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="text-base font-bold mb-1.5" style={{ color: "#0D0D0D" }}>{s.name}</h3>
-
-                <p
-                  className="text-xs font-mono mb-3 pb-3"
-                  style={{ color: "#C0C0C0", borderBottom: "1px solid #F5F5F5" }}
-                >
-                  {s.gap}
-                </p>
-
-                <p className="text-sm leading-relaxed mb-4 flex-1" style={{ color: "#777" }}>
-                  {s.description}
-                </p>
-
-                <div className="flex flex-wrap gap-1.5">
-                  {s.outcomes.map((o) => (
-                    <span
-                      key={o}
-                      className="text-xs px-2.5 py-1 rounded-full"
-                      style={{ background: "#F7F7F7", color: "#aaa", border: "1px solid #EFEFEF" }}
-                    >
-                      {o}
-                    </span>
-                  ))}
+                {/* Right col */}
+                <div>
+                  <p className="text-sm leading-relaxed mb-5" style={{ color: "#666" }}>{s.description}</p>
+                  <div className="flex flex-col gap-2">
+                    {s.outcomes.map((o) => (
+                      <div key={o} className="flex items-start gap-2.5">
+                        <Check size={12} className="mt-0.5 flex-shrink-0" style={{ color: "#E8541C" }} />
+                        <span className="text-xs leading-relaxed" style={{ color: "#888" }}>{o}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             );
@@ -193,66 +257,30 @@ function SystemsGrid() {
   );
 }
 
-function PageHero() {
-  return (
-    <section className="pt-32 pb-0 px-6" style={{ background: "#faf9f7" }}>
-      <div className="max-w-5xl mx-auto pb-16 border-b" style={{ borderColor: "#F0F0F0" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.08 }}
-        >
-          <h1 className="text-5xl lg:text-6xl font-bold leading-[1.07] tracking-tight mb-6" style={{ color: "#0D0D0D" }}>
-            Built for your operation.
-            <br />
-            <em className="not-italic" style={{ color: "#E8541C" }}>Not anyone else&apos;s.</em>
-          </h1>
-          <p className="text-xl leading-relaxed max-w-2xl mb-6" style={{ color: "#777" }}>
-            We don&apos;t sell packages. We audit your operation, identify the systems that will move the needle, and build them into the tools you already use: Guesty, Hostaway, Hospitable, QuickBooks, whatever your stack is.
-          </p>
-          <p className="text-base mb-10 font-medium" style={{ color: "#aaa" }}>
-            Starts with a free strategy call. No pitch. Just a map of what to build first.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <a
-              href="https://calendly.com/jacob-trivaconsulting/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 14px rgba(232,84,28,0.3)" }}
-            >
-              Book Your Free Strategy Call <ArrowRight size={15} />
-            </a>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
 function BottomCTA() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#faf9f7" }}>
+    <section ref={ref} className="py-28 px-6" style={{ background: "#0D0D0D" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-4xl font-bold mb-4" style={{ color: "#0D0D0D" }}>
+          <h2 className="text-4xl font-bold mb-5" style={{ color: "#fff" }}>
             Not sure what you need?
           </h2>
-          <p className="text-lg mb-8" style={{ color: "#888" }}>
-            That&apos;s exactly what the strategy call is for. We&apos;ll ask the right questions, find the biggest leak in your operation, and hand you a prioritized build plan, whether or not you work with us.
+          <p className="text-lg mb-10 leading-relaxed" style={{ color: "#555" }}>
+            That&apos;s exactly what the strategy call is for. We&apos;ll find the biggest leak in your operation and hand you a prioritized build plan — whether or not you work with us.
           </p>
           <a
             href="https://calendly.com/jacob-trivaconsulting/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-base transition-all duration-200 hover:-translate-y-0.5"
-            style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 20px rgba(232,84,28,0.3)" }}
+            style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 24px rgba(232,84,28,0.35)" }}
           >
             Book a Free Strategy Call <ArrowRight size={16} />
           </a>
@@ -268,7 +296,7 @@ export default function ServicesPage() {
       <PageHero />
       <ProcessStrip />
       <div id="systems">
-        <SystemsGrid />
+        <SystemsSection />
       </div>
       <BottomCTA />
     </>
