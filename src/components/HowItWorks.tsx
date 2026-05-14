@@ -9,12 +9,12 @@ const steps = [
     name: "Strategy Audit",
     tag: "30 min · Free",
     description:
-      "We learn your operation — your PMS, your team, where time is leaking. We map which systems to build and in what order. No obligation. Most people find it useful regardless.",
+      "We learn your operation: your PMS, your team, where time is leaking. We map which systems to build and in what order. No obligation. Most people find it useful regardless.",
   },
   {
     number: "02",
     name: "Foundation Build",
-    tag: "2–3 weeks",
+    tag: "2 to 3 weeks",
     description:
       "We build and configure your automation stack. You don't touch anything until it's live. We work directly with your tools, then hand you the keys with a full team walkthrough.",
   },
@@ -23,7 +23,7 @@ const steps = [
     name: "Systems Retainer",
     tag: "Ongoing",
     description:
-      "We maintain everything, add new workflows monthly, and scale your systems as your portfolio grows. 40 units or 120 — the systems grow with you.",
+      "We maintain everything, add new workflows monthly, and scale your systems as your portfolio grows. 40 units or 120, the systems grow with you.",
   },
 ];
 
@@ -47,12 +47,12 @@ export default function HowItWorks() {
               <span style={{ color: "#E8541C" }}>We&apos;re your systems team.</span>
             </h2>
             <p className="text-lg leading-relaxed" style={{ color: "#888" }}>
-              Every engagement starts with understanding your operation — then we build,
+              Every engagement starts with understanding your operation, then we build,
               deploy, and run the systems ourselves. You never have to touch it.
             </p>
           </motion.div>
 
-          {/* Right — steps */}
+          {/* Right: steps */}
           <div className="flex flex-col gap-4">
             {steps.map((step, i) => (
               <motion.div

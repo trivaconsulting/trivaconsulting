@@ -14,7 +14,7 @@ export default function Hero() {
       />
 
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
-        {/* Left — copy */}
+        {/* Left: copy */}
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
@@ -73,7 +73,7 @@ export default function Hero() {
             style={{ borderTop: "1px solid #f0f0f0" }}
           >
             {[
-              { value: "2–3 wks", label: "First system live" },
+              { value: "2 to 3 wks", label: "First system live" },
               { value: "10+ hrs", label: "Saved monthly, day one" },
               { value: "10+", label: "Units to get started" },
             ].map((s) => (
@@ -85,7 +85,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — property photo with floating cards */}
+        {/* Right: property photo with floating cards */}
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
@@ -109,7 +109,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* Floating card — top left */}
+          {/* Floating card top left */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,7 +129,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating card — bottom right */}
+          {/* Floating card bottom right */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -149,7 +149,7 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating card — bottom left */}
+          {/* Floating card bottom left */}
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}

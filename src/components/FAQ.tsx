@@ -8,23 +8,23 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
   {
     q: "Do I have to switch my PMS?",
-    a: "No. We work with whatever you're already running — Guesty, Hostaway, OwnerRez, Hospitable. We integrate with your stack, not against it. Switching your PMS is its own project and we're not part of it.",
+    a: "No. We work with whatever you're already running: Guesty, Hostaway, OwnerRez, Hospitable. We integrate with your stack, not against it. Switching your PMS is its own project and we're not part of it.",
   },
   {
     q: "How long does setup take?",
-    a: "First systems are typically live in 2–3 weeks from the start of a build. Some simpler workflows (cleaning dispatch, owner reports) are faster. The full stack takes 4–6 weeks depending on scope.",
+    a: "First systems are typically live in 2 to 3 weeks from the start of a build. Some simpler workflows (cleaning dispatch, owner reports) are faster. The full stack takes 4 to 6 weeks depending on scope.",
   },
   {
     q: "What size operation do you work with?",
-    a: "We work with STR management companies running 10 units or more. Below that, the ROI on automation doesn't make sense yet. Sweet spot is 20–150 units.",
+    a: "We work with STR management companies running 10 units or more. Below that, the ROI on automation doesn't make sense yet. Sweet spot is 20 to 150 units.",
   },
   {
     q: "Is this AI?",
-    a: "Some of it. The guest inbox uses AI to classify and draft messages. The owner reports and cleaning dispatch are workflow automation — no AI required, they just work. We use AI where it genuinely helps, not as a selling point.",
+    a: "Some of it. The guest inbox uses AI to classify and draft messages. The owner reports and cleaning dispatch are workflow automation, no AI required, they just work. We use AI where it genuinely helps, not as a selling point.",
   },
   {
     q: "What if I want to cancel?",
-    a: "Month-to-month after the initial build is complete. No long-term contracts. The systems we build belong to you — they live in your accounts and keep running if you stop the retainer.",
+    a: "Month-to-month after the initial build is complete. No long-term contracts. The systems we build belong to you. They live in your accounts and keep running if you stop the retainer.",
   },
   {
     q: "Do you replace my existing tools like Breezeway or Turno?",

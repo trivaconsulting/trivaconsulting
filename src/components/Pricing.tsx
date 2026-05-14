@@ -9,7 +9,7 @@ const tiers = [
     name: "Strategy Audit",
     price: "$2,500",
     cadence: "one-time",
-    description: "We map your operation, find the leaks, and hand you a prioritized systems plan — useful whether or not you work with us.",
+    description: "We map your operation, find the leaks, and hand you a prioritized systems plan. Useful whether or not you work with us.",
     includes: [
       "Full operational walkthrough",
       "Custom systems map",
@@ -21,8 +21,8 @@ const tiers = [
   },
   {
     name: "Foundation Build",
-    price: "$5K–$15K",
-    cadence: "one-time · scoped",
+    price: "$5K to $15K",
+    cadence: "one-time, scoped",
     description: "We build and deploy your automation stack, scoped to your operation and what you need first.",
     includes: [
       "Everything in the Audit",
@@ -36,12 +36,12 @@ const tiers = [
   },
   {
     name: "Systems Retainer",
-    price: "$2K–$5K",
+    price: "$2K to $5K",
     cadence: "per month",
     description: "We maintain, expand, and optimize your systems. New workflows added monthly as your portfolio grows.",
     includes: [
       "All active systems maintained",
-      "1–2 new workflows per month",
+      "1 to 2 new workflows per month",
       "Performance monitoring",
       "Priority support",
       "Monthly ops review call",

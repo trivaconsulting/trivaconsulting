@@ -31,7 +31,7 @@ export default function Contact() {
             </h2>
             <p className="text-lg mb-10" style={{ color: "#555" }}>
               Book a free 30-minute strategy call. We&apos;ll show you exactly
-              where your operation is leaking time and money — whether you work with us or not.
+              where your operation is leaking time and money, whether you work with us or not.
             </p>
             <a
               href="https://calendly.com/jacob-trivaconsulting/30min"

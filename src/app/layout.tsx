@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Triva — Automation Systems for STR Management Companies",
+  title: "Triva: Automation Systems for STR Management Companies",
   description: "Triva builds the automation systems that short-term rental management companies use to run leaner, retain owners, and scale without hiring.",
 };
 

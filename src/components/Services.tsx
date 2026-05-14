@@ -16,9 +16,9 @@ const services = [
   {
     icon: FileText,
     name: "Owner Report Pipeline",
-    tag: "Replaces: 8–15 hrs/month manual work",
+    tag: "Replaces: 8 to 15 hrs/month manual work",
     description:
-      "Revenue, occupancy, expenses, maintenance notes — pulled from your PMS and accounting tool, formatted, branded, and emailed to owners automatically every month. They stop calling because they already have the answer.",
+      "Revenue, occupancy, expenses, and maintenance notes pulled from your PMS and accounting tool, formatted, branded, and emailed to owners automatically every month. They stop calling because they already have the answer.",
     outcomes: ["Pulls from PMS + QuickBooks", "Branded and readable", "Sends itself on schedule"],
   },
   {
@@ -42,7 +42,7 @@ const services = [
     name: "Owner Acquisition CRM",
     tag: "Replaces: Spreadsheet of cold leads",
     description:
-      "Full GoHighLevel pipeline for signing new property owners. Automated follow-up sequences, intake forms, a discovery call funnel, and an AI chat widget on your site — running while you're at the property.",
+      "Full GoHighLevel pipeline for signing new property owners. Automated follow-up sequences, intake forms, a discovery call funnel, and an AI chat widget on your site, running while you're at the property.",
     outcomes: ["GoHighLevel configured for you", "Email + SMS sequences", "AI chat for owner inquiries"],
   },
 ];

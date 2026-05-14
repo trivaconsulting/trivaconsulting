@@ -18,7 +18,7 @@ const systems = [
     name: "Owner Monthly Reports",
     gap: "Fills the gap Guesty's reporting leaves",
     description:
-      "Revenue, expenses, maintenance costs, and distributions reconciled against actual trust balances — auto-generated and emailed to owners monthly. Stops the calls that kill trust.",
+      "Revenue, expenses, maintenance costs, and distributions reconciled against actual trust balances, auto-generated and emailed to owners monthly. Stops the calls that kill trust.",
     outcomes: ["PMS + QuickBooks/Xero", "Trust account reconciliation", "Branded PDF, sent on schedule"],
   },
   {
@@ -34,15 +34,15 @@ const systems = [
     name: "Owner Acquisition Pipeline",
     gap: "The CRM Guesty and Hostaway don't include",
     description:
-      "STR companies lose 30–35% of their portfolio annually. This replaces the spreadsheet: AI-generated market analysis per prospect, automated follow-up, fast onboarding, and a 24/7 AI chat widget for inbound owner inquiries.",
+      "STR companies lose 30 to 35% of their portfolio annually. This replaces the spreadsheet: AI-generated market analysis per prospect, automated follow-up, fast onboarding, and a 24/7 AI chat widget for inbound owner inquiries.",
     outcomes: ["Lead capture + follow-up sequences", "Market analysis auto-generated", "Onboarding checklist automated"],
   },
   {
     icon: MessageSquare,
     name: "AI Guest Inbox",
-    gap: "Context-aware — not Hospitable-style templates",
+    gap: "Context-aware, not Hospitable-style templates",
     description:
-      "Knows the property, the booking, and the situation. Simple questions answered instantly. Noise complaints, late check-ins, edge cases — drafted for one-click approval. Negative reviews written and ready to post.",
+      "Knows the property, the booking, and the situation. Simple questions answered instantly. Noise complaints, late check-ins, edge cases drafted for one-click approval. Negative reviews written and ready to post.",
     outcomes: ["Unified inbox across all OTAs", "Human review queue for edge cases", "Post-checkout review requests"],
   },
   {
@@ -50,7 +50,7 @@ const systems = [
     name: "Booking Integrity Monitor",
     gap: "Catches what Hostaway's 30-min sync misses",
     description:
-      "Cross-channel calendar verification running continuously. Sync gaps, reservation alterations that didn't propagate, booking pace anomalies — caught before a guest shows up with nowhere to stay.",
+      "Cross-channel calendar verification running continuously. Sync gaps, reservation alterations that didn't propagate, booking pace anomalies caught before a guest shows up with nowhere to stay.",
     outcomes: ["Continuous sync verification", "Conflict detection before check-in", "Booking pace anomaly alerts"],
   },
   {
@@ -67,12 +67,12 @@ const steps = [
   {
     number: "01",
     title: "Free Strategy Call",
-    description: "We map your operation, find the highest-value bottleneck, and tell you exactly what to build first — useful whether or not you work with us.",
+    description: "We map your operation, find the highest-value bottleneck, and tell you exactly what to build first. Useful whether or not you work with us.",
   },
   {
     number: "02",
     title: "Custom Build",
-    description: "We build the system into your existing stack — Guesty, Hostaway, QuickBooks, whatever you use. No new software to learn.",
+    description: "We build the system into your existing stack: Guesty, Hostaway, QuickBooks, whatever you use. No new software to learn.",
   },
   {
     number: "03",
@@ -192,10 +192,10 @@ function PageHero() {
             <em className="not-italic" style={{ color: "#E8541C" }}>Not anyone else&apos;s.</em>
           </h1>
           <p className="text-xl leading-relaxed max-w-2xl mb-6" style={{ color: "#777" }}>
-            We don&apos;t sell packages. We audit your operation, identify the systems that will move the needle, and build them into the tools you already use — Guesty, Hostaway, Hospitable, QuickBooks, whatever your stack is.
+            We don&apos;t sell packages. We audit your operation, identify the systems that will move the needle, and build them into the tools you already use: Guesty, Hostaway, Hospitable, QuickBooks, whatever your stack is.
           </p>
           <p className="text-base mb-10 font-medium" style={{ color: "#aaa" }}>
-            Starts with a free strategy call. No pitch — just a map of what to build first.
+            Starts with a free strategy call. No pitch. Just a map of what to build first.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <a
@@ -229,7 +229,7 @@ function BottomCTA() {
             Not sure what you need?
           </h2>
           <p className="text-lg mb-8" style={{ color: "#888" }}>
-            That&apos;s exactly what the strategy call is for. We&apos;ll ask the right questions, find the biggest leak in your operation, and hand you a prioritized build plan — whether or not you work with us.
+            That&apos;s exactly what the strategy call is for. We&apos;ll ask the right questions, find the biggest leak in your operation, and hand you a prioritized build plan, whether or not you work with us.
           </p>
           <a
             href="https://calendly.com/jacob-trivaconsulting/30min"

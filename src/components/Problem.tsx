@@ -34,7 +34,7 @@ export default function Problem() {
     <section ref={ref} className="py-28 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-start">
-          {/* Left — header */}
+          {/* Left: header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -46,7 +46,7 @@ export default function Problem() {
               the software.
             </h2>
             <p className="text-lg leading-relaxed mb-6" style={{ color: "#888" }}>
-              Guesty. Hostaway. OwnerRez. The PMS isn&apos;t broken — the workflows
+              Guesty. Hostaway. OwnerRez. The PMS isn&apos;t broken. The workflows
               around it are. Every day you&apos;re filling the gaps manually.
             </p>
             <div
@@ -57,7 +57,7 @@ export default function Problem() {
             </div>
           </motion.div>
 
-          {/* Right — pain cards */}
+          {/* Right: pain cards */}
           <div className="flex flex-col gap-4">
             {pains.map((p, i) => (
               <motion.div
