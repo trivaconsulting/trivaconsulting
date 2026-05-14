@@ -6,7 +6,9 @@ export default function Logos() {
     "PriceLabs", "Breezeway", "Turno", "GoHighLevel",
   ];
 
-  const items = [...tools, ...tools];
+  // 6 copies: animation moves -50% (3 copy widths). The other 3 copies fill the viewport.
+  // Guarantees no gap on any screen width up to ~3k px.
+  const items = [...tools, ...tools, ...tools, ...tools, ...tools, ...tools];
 
   return (
     <section
@@ -19,7 +21,7 @@ export default function Logos() {
           to { transform: translateX(-50%); }
         }
         .marquee-inner {
-          animation: scroll-left 24s linear infinite;
+          animation: scroll-left 36s linear infinite;
         }
         .marquee-inner:hover {
           animation-play-state: paused;
@@ -33,8 +35,8 @@ export default function Logos() {
       <div
         className="overflow-hidden"
         style={{
-          maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-          WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+          WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         }}
       >
         <div className="marquee-inner flex gap-3 w-max">
