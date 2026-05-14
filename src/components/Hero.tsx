@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
-const notifications = [
-  { emoji: "✅", text: "Cleaner dispatched — Unit 4B · 11:02am" },
-  { emoji: "📊", text: "Owner report sent — March summary" },
-  { emoji: "💬", text: "Guest reply drafted — awaiting approval" },
-  { emoji: "⭐", text: "Review requested — Sarah T. checked out" },
-];
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -16,7 +10,7 @@ export default function Hero() {
       {/* Subtle top-right blob */}
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(232,84,28,0.06) 0%, transparent 65%)" }}
+        style={{ background: "radial-gradient(circle, rgba(232,84,28,0.05) 0%, transparent 65%)" }}
       />
 
       <div className="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
@@ -67,7 +61,7 @@ export default function Hero() {
               href="https://calendly.com/jacob-trivaconsulting/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5"
               style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 14px rgba(232,84,28,0.3)" }}
             >
               Book a Free Strategy Call <ArrowRight size={15} />
@@ -102,54 +96,89 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right — system visual */}
+        {/* Right — property photo with floating cards */}
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="hidden md:flex flex-col gap-3"
+          className="hidden md:block relative"
         >
-          <div
-            className="rounded-2xl p-5 mb-1"
-            style={{ background: "#F7F7F7", border: "1px solid #EDEDED" }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-widest mb-4" style={{ color: "#bbb" }}>
-              Your systems, running right now
-            </p>
-            <div className="flex flex-col gap-2.5">
-              {notifications.map((n, i) => (
-                <motion.div
-                  key={n.text}
-                  initial={{ opacity: 0, x: 12 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.5 + i * 0.12 }}
-                  className="flex items-center gap-3 rounded-xl px-4 py-3.5 bg-white"
-                  style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.06)", border: "1px solid #f0f0f0" }}
-                >
-                  <span className="text-base">{n.emoji}</span>
-                  <span className="text-sm" style={{ color: "#444" }}>{n.text}</span>
-                </motion.div>
-              ))}
-            </div>
+          {/* Main photo */}
+          <div className="relative rounded-3xl overflow-hidden" style={{ boxShadow: "0 24px 80px rgba(0,0,0,0.12)" }}>
+            <Image
+              src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=700&q=85&auto=format&fit=crop"
+              alt="Short-term rental property"
+              width={700}
+              height={520}
+              className="w-full h-[480px] object-cover"
+              priority
+            />
+            {/* Subtle dark gradient at bottom */}
+            <div
+              className="absolute bottom-0 left-0 right-0 h-32"
+              style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25), transparent)" }}
+            />
           </div>
 
-          {/* Mini stat card */}
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              { label: "Owner reports sent", value: "Auto", sub: "every 1st of the month" },
-              { label: "Guest response time", value: "< 2 min", sub: "vs 4 hrs industry avg" },
-            ].map((c) => (
-              <div
-                key={c.label}
-                className="rounded-xl p-4 bg-white"
-                style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.06)", border: "1px solid #f0f0f0" }}
-              >
-                <div className="text-xs mb-2" style={{ color: "#bbb" }}>{c.label}</div>
-                <div className="text-xl font-bold mb-0.5" style={{ color: "#E8541C" }}>{c.value}</div>
-                <div className="text-xs" style={{ color: "#ccc" }}>{c.sub}</div>
-              </div>
-            ))}
-          </div>
+          {/* Floating card — top left */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="absolute -left-6 top-8 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3"
+            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.1)", border: "1px solid #f0f0f0", minWidth: 220 }}
+          >
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
+              style={{ background: "rgba(232,84,28,0.08)" }}
+            >
+              ✅
+            </div>
+            <div>
+              <p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Cleaner dispatched</p>
+              <p className="text-xs" style={{ color: "#aaa" }}>Unit 4B · auto-triggered</p>
+            </div>
+          </motion.div>
+
+          {/* Floating card — bottom right */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="absolute -right-6 bottom-10 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3"
+            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.1)", border: "1px solid #f0f0f0", minWidth: 220 }}
+          >
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
+              style={{ background: "rgba(232,84,28,0.08)" }}
+            >
+              📊
+            </div>
+            <div>
+              <p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Owner report sent</p>
+              <p className="text-xs" style={{ color: "#aaa" }}>March summary · 7 owners</p>
+            </div>
+          </motion.div>
+
+          {/* Floating card — bottom left */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.05 }}
+            className="absolute left-4 bottom-6 bg-white rounded-2xl px-4 py-3.5 flex items-center gap-3"
+            style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.1)", border: "1px solid #f0f0f0", minWidth: 200 }}
+          >
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
+              style={{ background: "rgba(232,84,28,0.08)" }}
+            >
+              ⭐
+            </div>
+            <div>
+              <p className="text-xs font-semibold" style={{ color: "#1a1a1a" }}>Review requested</p>
+              <p className="text-xs" style={{ color: "#aaa" }}>Post-checkout · auto-sent</p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
