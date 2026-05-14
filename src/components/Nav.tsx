@@ -28,10 +28,14 @@ export default function Nav() {
           <Image src="/logo-black.png" alt="Triva" width={96} height={32} className="h-7 w-auto" priority />
 
           <div className="hidden md:flex items-center gap-10">
-            {["Services", "How It Works", "Pricing"].map((label) => (
+            {[
+              { label: "Services", href: "/services" },
+              { label: "How It Works", href: "#how-it-works" },
+              { label: "Pricing", href: "#pricing" },
+            ].map(({ label, href }) => (
               <a
                 key={label}
-                href={`#${label.toLowerCase().replace(/ /g, "-")}`}
+                href={href}
                 className="text-sm font-medium transition-colors duration-150"
                 style={{ color: "#999" }}
                 onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#111")}
@@ -65,10 +69,14 @@ export default function Nav() {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="md:hidden border-t px-6 pb-6 pt-4 flex flex-col gap-4" style={{ borderColor: "#f0f0f0" }}>
-            {["Services", "How It Works", "Pricing"].map((label) => (
+            {[
+              { label: "Services", href: "/services" },
+              { label: "How It Works", href: "#how-it-works" },
+              { label: "Pricing", href: "#pricing" },
+            ].map(({ label, href }) => (
               <a
                 key={label}
-                href={`#${label.toLowerCase().replace(/ /g, "-")}`}
+                href={href}
                 className="text-base font-medium py-1"
                 style={{ color: "#555" }}
                 onClick={() => setMobileOpen(false)}

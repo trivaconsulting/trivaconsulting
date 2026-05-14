@@ -56,7 +56,7 @@ export default function Hero() {
               Book a Free Strategy Call <ArrowRight size={15} />
             </a>
             <a
-              href="#services"
+              href="/services"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:bg-gray-50"
               style={{ color: "#555", border: "1px solid #e5e5e5" }}
             >
