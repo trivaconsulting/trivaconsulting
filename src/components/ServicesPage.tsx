@@ -84,8 +84,12 @@ const steps = [
 
 function PageHero() {
   return (
-    <section className="pt-32 pb-24 px-6" style={{ background: "#0D0D0D" }}>
-      <div className="max-w-5xl mx-auto">
+    <section className="pt-32 pb-24 px-6 relative overflow-hidden" style={{ background: "#faf9f7" }}>
+      <div
+        className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, rgba(232,84,28,0.05) 0%, transparent 65%)" }}
+      />
+      <div className="max-w-5xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -96,11 +100,11 @@ function PageHero() {
           </p>
           <h1
             className="font-bold leading-[1.05] tracking-tight mb-7"
-            style={{ fontSize: "clamp(2.6rem, 6vw, 4.5rem)", color: "#fff", maxWidth: 720 }}
+            style={{ fontSize: "clamp(2.6rem, 6vw, 4.5rem)", color: "#0D0D0D", maxWidth: 720 }}
           >
             The back office your PMS was never going to build.
           </h1>
-          <p className="text-lg mb-10 max-w-xl leading-relaxed" style={{ color: "#666" }}>
+          <p className="text-lg mb-10 max-w-xl leading-relaxed" style={{ color: "#777" }}>
             Custom automation that plugs into Guesty, Hostaway, QuickBooks, and whatever else you run. We build it, maintain it, and hand you the keys.
           </p>
           <div className="flex flex-wrap gap-3 mb-16">
@@ -109,21 +113,21 @@ function PageHero() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 20px rgba(232,84,28,0.35)" }}
+              style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 14px rgba(232,84,28,0.3)" }}
             >
               Book a Free Strategy Call <ArrowRight size={14} />
             </a>
             <a
               href="#systems"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:border-white/20"
-              style={{ background: "transparent", color: "#777", border: "1px solid rgba(255,255,255,0.1)" }}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:bg-white"
+              style={{ background: "transparent", color: "#555", border: "1px solid #e5e5e5" }}
             >
               See what we build
             </a>
           </div>
           <div
             className="flex flex-wrap gap-10 pt-8"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+            style={{ borderTop: "1px solid #EDEAE5" }}
           >
             {[
               { val: "6", label: "core systems" },
@@ -131,8 +135,8 @@ function PageHero() {
               { val: "Month-to-month", label: "no lock-in" },
             ].map((s) => (
               <div key={s.label}>
-                <p className="text-xl font-bold mb-0.5" style={{ color: "#fff" }}>{s.val}</p>
-                <p className="text-xs font-mono" style={{ color: "#444" }}>{s.label}</p>
+                <p className="text-xl font-bold mb-0.5" style={{ color: "#0D0D0D" }}>{s.val}</p>
+                <p className="text-xs font-mono" style={{ color: "#aaa" }}>{s.label}</p>
               </div>
             ))}
           </div>
@@ -262,17 +266,17 @@ function BottomCTA() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-28 px-6" style={{ background: "#0D0D0D" }}>
+    <section ref={ref} className="py-28 px-6" style={{ background: "#fff" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-4xl font-bold mb-5" style={{ color: "#fff" }}>
+          <h2 className="text-4xl font-bold mb-5" style={{ color: "#0D0D0D" }}>
             Not sure what you need?
           </h2>
-          <p className="text-lg mb-10 leading-relaxed" style={{ color: "#555" }}>
+          <p className="text-lg mb-10 leading-relaxed" style={{ color: "#888" }}>
             That&apos;s exactly what the strategy call is for. We&apos;ll find the biggest leak in your operation and hand you a prioritized build plan — whether or not you work with us.
           </p>
           <a
@@ -280,7 +284,7 @@ function BottomCTA() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-base transition-all duration-200 hover:-translate-y-0.5"
-            style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 24px rgba(232,84,28,0.35)" }}
+            style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 20px rgba(232,84,28,0.3)" }}
           >
             Book a Free Strategy Call <ArrowRight size={16} />
           </a>
