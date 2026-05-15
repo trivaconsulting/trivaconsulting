@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
 const faqs = [
@@ -58,7 +58,13 @@ const faqs = [
 export default function FAQ() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const [open, setOpen] = useState<number | null>(0);
+  const [open, setOpen] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      setOpen(0);
+    }
+  }, []);
 
   return (
     <section ref={ref} className="py-24 px-6" style={{ background: "#fff" }}>

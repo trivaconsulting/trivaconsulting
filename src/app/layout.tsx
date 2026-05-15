@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import JsonLd from "@/components/JsonLd";
+import MobileCTA from "@/components/MobileCTA";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import {
   SITE_URL,
@@ -94,6 +95,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <JsonLd data={[organizationSchema, websiteSchema]} />
         {children}
+        <MobileCTA />
       </body>
     </html>
   );

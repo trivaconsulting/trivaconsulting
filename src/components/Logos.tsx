@@ -27,7 +27,12 @@ export default function Logos() {
           to { transform: translateX(-50%); }
         }
         .marquee-inner {
-          animation: scroll-left 80s linear infinite;
+          animation: scroll-left 40s linear infinite;
+        }
+        @media (min-width: 768px) {
+          .marquee-inner {
+            animation-duration: 80s;
+          }
         }
         .marquee-inner:hover {
           animation-play-state: paused;
