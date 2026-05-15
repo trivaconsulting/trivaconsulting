@@ -30,22 +30,16 @@ const steps = [
   },
 ];
 
-// Organic left-to-right path — deliberately NOT a sine wave.
-// Each segment has a different "lean": some linger at the valley before rising,
-// some plunge immediately, some have a wide flat top. Peaks and valleys are all
-// at different y values so no two periods look the same.
-//
-// Card x-centers ≈ 155, 510, 855 in viewBox 0 0 1000 750.
-// Valley depths: 730 (deep) → 680 (shallow) → 720 (medium).
-// Peak heights:  270 (tall)  → 360 (lower).
+// Smooth C1-continuous path — control points are generous (120-180px from anchors)
+// so direction changes are wide and lazy, never sharp. Horizontal tangents at every
+// peak and valley mean zero kinks. Spacing between features is deliberately unequal
+// so it reads organic rather than periodic.
 const FLOW_PATH = [
-  "M -80 380",
-  "C 0 380, 60 730, 155 730",     // flat entry → steep plunge behind card 01
-  "C 250 730, 295 270, 330 270",  // lingers at valley → sharp spike to high peak
-  "C 365 270, 420 680, 510 680",  // flat at top → smooth drop behind card 02
-  "C 560 680, 660 360, 680 360",  // medium rise to lower peak
-  "C 700 360, 780 720, 855 720",  // immediate drop → valley behind card 03
-  "C 920 720, 1020 360, 1080 360", // slow linger → gradual exit rise
+  "M -80 390",
+  "C 100 390, 80 700, 200 700",   // wide flat entry → smooth arc down to valley 1
+  "C 340 700, 400 330, 530 330",  // wide departure, wide approach → smooth rise to peak
+  "C 640 330, 680 680, 760 680",  // wide departure from peak → smooth drop to valley 2
+  "C 840 680, 1000 430, 1100 430", // smooth lazy exit curve
 ].join(" ");
 
 export default function HowItWorks() {
