@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   FileText,
   Wrench,
@@ -95,51 +95,15 @@ function PageHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-mono uppercase tracking-[0.18em] mb-8" style={{ color: "#E8541C" }}>
-            AI Operations · Short-Term Rental
-          </p>
           <h1
             className="font-bold leading-[1.05] tracking-tight mb-7"
             style={{ fontSize: "clamp(2.6rem, 6vw, 4.5rem)", color: "#0D0D0D", maxWidth: 720 }}
           >
             The back office your PMS was never going to build.
           </h1>
-          <p className="text-lg mb-10 max-w-xl leading-relaxed" style={{ color: "#777" }}>
+          <p className="text-lg max-w-xl leading-relaxed" style={{ color: "#777" }}>
             Custom automation that plugs into Guesty, Hostaway, QuickBooks, and whatever else you run. We build it, maintain it, and hand you the keys.
           </p>
-          <div className="flex flex-wrap gap-3 mb-16">
-            <a
-              href="https://calendly.com/jacob-trivaconsulting/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5"
-              style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 14px rgba(232,84,28,0.3)" }}
-            >
-              Book a Free Strategy Call <ArrowRight size={14} />
-            </a>
-            <a
-              href="#systems"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:bg-white"
-              style={{ background: "transparent", color: "#555", border: "1px solid #e5e5e5" }}
-            >
-              See what we build
-            </a>
-          </div>
-          <div
-            className="flex flex-wrap gap-10 pt-8"
-            style={{ borderTop: "1px solid #EDEAE5" }}
-          >
-            {[
-              { val: "6", label: "core systems" },
-              { val: "2–3 wk", label: "deployment" },
-              { val: "Month-to-month", label: "no lock-in" },
-            ].map((s) => (
-              <div key={s.label}>
-                <p className="text-xl font-bold mb-0.5" style={{ color: "#0D0D0D" }}>{s.val}</p>
-                <p className="text-xs font-mono" style={{ color: "#aaa" }}>{s.label}</p>
-              </div>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>
@@ -149,6 +113,10 @@ function PageHero() {
 function ProcessStrip() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const progressPct =
+    steps.length > 1 ? (activeIndex / (steps.length - 1)) * 100 : 0;
 
   return (
     <section ref={ref} className="py-16 px-6" style={{ background: "#fff", borderBottom: "1px solid #EFEFEF" }}>
@@ -156,30 +124,48 @@ function ProcessStrip() {
         <div className="relative flex flex-col md:flex-row gap-10 md:gap-0">
           <div
             className="hidden md:block absolute"
-            style={{ top: 20, left: 20, right: 20, height: 1, background: "#F0F0F0" }}
+            style={{ top: 20, left: "16.6667%", right: "16.6667%", height: 1, background: "#F0F0F0" }}
           />
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 14 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.45, delay: 0.13 * i }}
-              className="flex-1 md:px-8 relative z-10"
-            >
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center font-mono text-xs font-bold mb-5 flex-shrink-0"
-                style={{
-                  background: i === 0 ? "#E8541C" : "#fff",
-                  color: i === 0 ? "#fff" : "#ccc",
-                  border: i === 0 ? "none" : "1px solid #E8E8E8",
-                }}
+          <div
+            className="hidden md:block absolute"
+            style={{
+              top: 20,
+              left: "16.6667%",
+              width: `calc(66.6667% * ${progressPct / 100})`,
+              height: 1,
+              background: "#E8541C",
+              transition: "width 0.4s ease",
+            }}
+          />
+          {steps.map((step, i) => {
+            const isActive = i <= activeIndex;
+            return (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 14 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.45, delay: 0.13 * i }}
+                className="flex-1 md:px-8 relative z-10 md:text-center"
               >
-                {step.number}
-              </div>
-              <h3 className="text-sm font-bold mb-2" style={{ color: "#0D0D0D" }}>{step.title}</h3>
-              <p className="text-sm leading-relaxed" style={{ color: "#999" }}>{step.description}</p>
-            </motion.div>
-          ))}
+                <button
+                  type="button"
+                  onClick={() => setActiveIndex(i)}
+                  aria-pressed={isActive}
+                  className="w-10 h-10 rounded-full flex items-center justify-center font-mono text-xs font-bold mb-5 flex-shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8541C]/40 md:mx-auto"
+                  style={{
+                    background: isActive ? "#E8541C" : "#fff",
+                    color: isActive ? "#fff" : "#ccc",
+                    border: isActive ? "none" : "1px solid #E8E8E8",
+                    transition: "background 0.2s ease, color 0.2s ease, border-color 0.2s ease",
+                  }}
+                >
+                  {step.number}
+                </button>
+                <h3 className="text-sm font-bold mb-2" style={{ color: "#0D0D0D" }}>{step.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#999" }}>{step.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -200,11 +186,14 @@ function SystemsSection() {
           className="mb-16"
         >
           <p className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#bbb" }}>
-            What we build
+            Examples of past work
           </p>
-          <h2 className="text-4xl font-bold leading-tight" style={{ color: "#0D0D0D", maxWidth: 480 }}>
-            Six systems. Every one fills a specific gap.
+          <h2 className="text-4xl font-bold leading-tight mb-4" style={{ color: "#0D0D0D", maxWidth: 560 }}>
+            A few systems we&apos;ve built. Not the limit of what we do.
           </h2>
+          <p className="text-base leading-relaxed" style={{ color: "#777", maxWidth: 560 }}>
+            These are real builds from past engagements — picked because each one fills a specific operational gap. Your stack and bottlenecks are different. We build whatever the highest-value system is for your operation.
+          </p>
         </motion.div>
 
         <div style={{ borderTop: "1px solid #EBEBEB" }}>

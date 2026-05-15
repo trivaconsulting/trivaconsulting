@@ -1,0 +1,67 @@
+# Triva
+
+> Triva builds the automation systems that short-term rental (STR) management companies use to run leaner, retain owners, and scale without hiring. Done-for-you AI and automation that lives on top of existing PMS tools — Guesty, Hostaway, OwnerRez, Hospitable, Lodgify. Not a SaaS product; a consulting practice that builds, deploys, and maintains custom automation in the client's own accounts.
+
+## About
+
+- **What:** STR-focused automation and AI consulting
+- **For:** Short-term rental property management companies with 10+ units (sweet spot: 20–150 units)
+- **Founder:** Jacob Willard
+- **Location:** United States
+- **Contact:** jacob@trivaconsulting.com
+- **Book a call:** https://calendly.com/jacob-trivaconsulting/30min
+- **Slogan:** We build it. You run your business.
+
+## What Triva Builds
+
+1. **Owner Monthly Reports** — Auto-generated owner statements reconciling revenue, expenses, maintenance, and distributions against actual trust balances. Branded PDF, sent on schedule. Replaces 8–15 hours of manual spreadsheet work each month.
+2. **Maintenance Coordination Loop** — Guest reports an issue, vendor is dispatched, follow-ups sent, invoice captured and pushed to the owner statement. Full loop without a manager in the middle.
+3. **Owner Acquisition Pipeline** — Replaces the prospect spreadsheet. AI-generated market analysis per prospect, automated follow-up, fast onboarding, and a 24/7 AI chat widget for inbound owner inquiries.
+4. **AI Guest Inbox** — Context-aware guest messaging across all OTAs. Simple questions answered instantly. Edge cases drafted for one-click human approval. Post-checkout review requests automated.
+5. **Booking Integrity Monitor** — Continuous cross-channel calendar verification. Catches sync gaps, reservation alterations, and booking pace anomalies before a guest shows up to a double-booked unit.
+6. **Compliance Calendar** — Multi-market regulatory tracking. Permit renewals, occupancy tax deadlines, and platform requirements with alerts at 30, 14, and 3 days out.
+
+## How Engagements Work
+
+1. **Free Strategy Call (30 minutes)** — Map the operation, identify the highest-value bottleneck, prioritize what to build first. Useful whether or not the prospect engages Triva.
+2. **Foundation Build (2 to 3 weeks for first system; 4 to 6 weeks for the full stack)** — Triva builds and configures automation inside the client's existing tools. The client touches nothing until launch, then gets a full team walkthrough.
+3. **Systems Retainer (ongoing, month-to-month)** — Triva maintains the systems, adds new workflows monthly, and patches around platform changes (Airbnb pricing, Hostaway API updates, Guesty webhook changes).
+
+## Pricing
+
+- Free 30-minute strategy call.
+- Fixed-price builds, scoped per system. Most projects land between $4,000 and $20,000.
+- Optional monthly retainer for maintenance and new workflows. Month-to-month.
+- No per-listing fees, no revenue share, no long-term contracts.
+- Systems Triva builds belong to the client and live in the client's own accounts (Guesty, Hostaway, QuickBooks, Make, n8n).
+
+## What Triva Is Not
+
+- Not a SaaS product. The client does not log into a Triva dashboard.
+- Not a PMS replacement. Triva works on top of Guesty, Hostaway, OwnerRez, Hospitable, and Lodgify.
+- Not a virtual assistant agency. Triva builds the systems that remove tasks rather than hiring people to do them.
+- Not a vendor. Triva functions as the client's outsourced systems team.
+
+## Principles
+
+- **Trust is the product.** AI replies are either sent under a clearly disclosed assistant identity or routed through a one-click human approval queue. Sensitive matters (refunds, complaints, late check-ins, edge cases) always require human approval.
+- **AI used selectively.** AI for what AI is good at — classification, drafting, summarization, market analysis. Deterministic automation for everything else.
+- **Built on the client's stack.** Triva integrates with existing PMS, accounting (QuickBooks/Xero), and channel tools rather than replacing them.
+
+## Key Pages
+
+- [Home](https://trivaconsulting.com/)
+- [What We Build](https://trivaconsulting.com/services)
+- [Pricing](https://trivaconsulting.com/pricing)
+- [FAQ](https://trivaconsulting.com/faq)
+- [Book a Strategy Call](https://calendly.com/jacob-trivaconsulting/30min)
+
+## Common Questions
+
+- **Do I have to switch my PMS?** No. Triva integrates with whatever PMS the client already runs.
+- **How long until something is live?** First system typically live in 2 to 3 weeks; full stack in 4 to 6 weeks.
+- **What does it cost?** Fixed-price builds usually $4K–$20K plus optional month-to-month retainer.
+- **What size operation?** STR management companies with 10+ units. Sweet spot 20 to 150 units.
+- **Will guests know they are talking to AI?** Yes, by design. Disclosure or human approval, never deception.
+- **Does Triva handle trust accounting and 1099s?** Yes. Reconciles into QuickBooks or Xero with year-end-ready data.
+- **What if I want to cancel?** Month-to-month after the build. No long-term contracts. Systems stay with the client.

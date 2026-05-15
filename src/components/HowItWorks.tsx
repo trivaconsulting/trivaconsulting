@@ -100,7 +100,7 @@ export default function HowItWorks() {
 
         {/* Heading */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-32"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
