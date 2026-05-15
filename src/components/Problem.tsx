@@ -141,7 +141,9 @@ export default function Problem() {
             <span style={{ color: "#E8541C" }}>That&apos;s the gap we fill.</span>
           </p>
           <a
-            href="#contact"
+            href="https://calendly.com/jacob-trivaconsulting/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-shrink-0 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:opacity-90 hover:-translate-y-0.5"
             style={{ background: "#E8541C", color: "#fff", boxShadow: "0 4px 12px rgba(232,84,28,0.25)" }}
           >
