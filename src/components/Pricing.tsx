@@ -25,13 +25,13 @@ export default function Pricing() {
     <section
       ref={ref}
       id="pricing"
-      className="py-24 px-6"
+      className="py-16 sm:py-24 px-6"
       style={{
         background: "linear-gradient(135deg, #FFF0E9 0%, #FFE4D4 50%, #FFDCC8 100%)",
       }}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
 
           {/* Left — headline + CTA */}
           <motion.div
@@ -45,7 +45,7 @@ export default function Pricing() {
             >
               Free · No obligation
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5" style={{ color: "#1A0A04" }}>
+            <h2 className="text-[2rem] sm:text-4xl md:text-5xl font-bold leading-tight mb-5" style={{ color: "#1A0A04" }}>
               Most STR operators have the same problems.{" "}
               <span style={{ color: "#E8541C" }}>The ones who fix them first win.</span>
             </h2>
@@ -76,7 +76,7 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.12 }}
-            className="rounded-2xl p-8 flex flex-col gap-8"
+            className="rounded-2xl p-6 sm:p-8 flex flex-col gap-7 sm:gap-8"
             style={{
               background: "#fff",
               boxShadow: "0 8px 40px rgba(232,84,28,0.12)",

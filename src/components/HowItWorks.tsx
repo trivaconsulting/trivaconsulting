@@ -50,7 +50,7 @@ export default function HowItWorks() {
     <section
       ref={ref}
       id="how-it-works"
-      className="relative py-28 px-6 bg-white overflow-hidden"
+      className="relative py-16 sm:py-24 md:py-28 px-6 bg-white overflow-hidden"
     >
       {/* Flowing orange line — spans the full section, behind everything */}
       <svg
@@ -100,12 +100,12 @@ export default function HowItWorks() {
 
         {/* Heading */}
         <motion.div
-          className="text-center mb-32"
+          className="text-center mb-14 md:mb-32"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-5" style={{ color: "#0D0D0D" }}>
+          <h2 className="text-[2rem] sm:text-4xl md:text-5xl font-bold leading-tight mb-5" style={{ color: "#0D0D0D" }}>
             We&apos;re not a vendor.{" "}
             <span style={{ color: "#E8541C" }}>We&apos;re your systems team.</span>
           </h2>

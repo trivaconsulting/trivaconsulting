@@ -84,7 +84,7 @@ const steps = [
 
 function PageHero() {
   return (
-    <section className="pt-32 pb-24 px-6 relative overflow-hidden" style={{ background: "#faf9f7" }}>
+    <section className="pt-24 sm:pt-32 pb-14 sm:pb-24 px-6 relative overflow-hidden" style={{ background: "#faf9f7" }}>
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(232,84,28,0.05) 0%, transparent 65%)" }}
@@ -119,7 +119,7 @@ function ProcessStrip() {
     steps.length > 1 ? (activeIndex / (steps.length - 1)) * 100 : 0;
 
   return (
-    <section ref={ref} className="py-16 px-6" style={{ background: "#fff", borderBottom: "1px solid #EFEFEF" }}>
+    <section ref={ref} className="py-12 sm:py-16 px-6" style={{ background: "#fff", borderBottom: "1px solid #EFEFEF" }}>
       <div className="max-w-5xl mx-auto">
         <div className="relative flex flex-col md:flex-row gap-10 md:gap-0">
           <div
@@ -177,13 +177,13 @@ function SystemsSection() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} id="systems" className="py-24 px-6" style={{ background: "#faf9f7" }}>
+    <section ref={ref} id="systems" className="py-16 sm:py-24 px-6" style={{ background: "#faf9f7" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.45 }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
           <p className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#bbb" }}>
             Examples of past work
@@ -205,7 +205,7 @@ function SystemsSection() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.42, delay: 0.07 * i }}
-                className="py-10 grid md:grid-cols-2 gap-8 md:gap-16"
+                className="py-8 sm:py-10 grid md:grid-cols-2 gap-6 md:gap-16"
                 style={{ borderBottom: "1px solid #EBEBEB" }}
               >
                 {/* Left col */}
@@ -255,14 +255,14 @@ function BottomCTA() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-28 px-6" style={{ background: "#fff" }}>
+    <section ref={ref} className="py-20 sm:py-28 px-6" style={{ background: "#fff" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-4xl font-bold mb-5" style={{ color: "#0D0D0D" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-5" style={{ color: "#0D0D0D" }}>
             Not sure what you need?
           </h2>
           <p className="text-lg mb-10 leading-relaxed" style={{ color: "#888" }}>

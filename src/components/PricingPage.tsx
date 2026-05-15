@@ -73,7 +73,7 @@ const notPaying = [
 
 function PageHero() {
   return (
-    <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{ background: "#faf9f7" }}>
+    <section className="pt-24 sm:pt-32 pb-14 sm:pb-20 px-6 relative overflow-hidden" style={{ background: "#faf9f7" }}>
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(232,84,28,0.05) 0%, transparent 65%)" }}
@@ -106,18 +106,18 @@ function FactorsSection() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#fff" }}>
+    <section ref={ref} className="py-16 sm:py-24 px-6" style={{ background: "#fff" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.45 }}
-          className="mb-14"
+          className="mb-10 sm:mb-14"
         >
           <p className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#bbb" }}>
             What drives the number
           </p>
-          <h2 className="text-4xl font-bold leading-tight mb-4" style={{ color: "#0D0D0D", maxWidth: 560 }}>
+          <h2 className="text-3xl sm:text-4xl font-bold leading-tight mb-4" style={{ color: "#0D0D0D", maxWidth: 560 }}>
             Four things determine the price.
           </h2>
           <p className="text-base leading-relaxed" style={{ color: "#777", maxWidth: 560 }}>
@@ -159,18 +159,18 @@ function EngagementModel() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#faf9f7" }}>
+    <section ref={ref} className="py-16 sm:py-24 px-6" style={{ background: "#faf9f7" }}>
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.45 }}
-          className="mb-14"
+          className="mb-10 sm:mb-14"
         >
           <p className="text-xs font-mono uppercase tracking-widest mb-3" style={{ color: "#bbb" }}>
             How an engagement runs
           </p>
-          <h2 className="text-4xl font-bold leading-tight" style={{ color: "#0D0D0D", maxWidth: 560 }}>
+          <h2 className="text-3xl sm:text-4xl font-bold leading-tight" style={{ color: "#0D0D0D", maxWidth: 560 }}>
             Free call → fixed proposal → build → it&apos;s yours.
           </h2>
         </motion.div>
@@ -211,7 +211,7 @@ function IncludedSection() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#fff" }}>
+    <section ref={ref} className="py-16 sm:py-24 px-6" style={{ background: "#fff" }}>
       <div className="max-w-5xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16">
           <motion.div
@@ -274,14 +274,14 @@ function BottomCTA() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-28 px-6" style={{ background: "#faf9f7" }}>
+    <section ref={ref} className="py-20 sm:py-28 px-6" style={{ background: "#faf9f7" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-4xl font-bold mb-5" style={{ color: "#0D0D0D" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-5" style={{ color: "#0D0D0D" }}>
             Want an actual number?
           </h2>
           <p className="text-lg mb-10 leading-relaxed" style={{ color: "#888" }}>

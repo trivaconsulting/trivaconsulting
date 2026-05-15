@@ -55,7 +55,7 @@ export default function Problem() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#FAFAFA" }}>
+    <section ref={ref} className="py-16 sm:py-24 px-6" style={{ background: "#FAFAFA" }}>
       <div className="max-w-7xl mx-auto">
 
         {/* Section header */}
@@ -63,12 +63,12 @@ export default function Problem() {
           initial={{ opacity: 0, y: 18 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mb-14"
+          className="max-w-2xl mb-10 sm:mb-14"
         >
           <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: "#E8541C" }}>
             The problem
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ color: "#0D0D0D" }}>
+          <h2 className="text-[2rem] sm:text-4xl md:text-5xl font-bold leading-tight mb-4" style={{ color: "#0D0D0D" }}>
             You already have
             <br />the software.
           </h2>

@@ -7,7 +7,7 @@ import FAQ from "./FAQ";
 
 function PageHero() {
   return (
-    <section className="pt-32 pb-20 px-6 relative overflow-hidden" style={{ background: "#faf9f7" }}>
+    <section className="pt-24 sm:pt-32 pb-14 sm:pb-20 px-6 relative overflow-hidden" style={{ background: "#faf9f7" }}>
       <div
         className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(232,84,28,0.05) 0%, transparent 65%)" }}
@@ -41,14 +41,14 @@ function BottomCTA() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section ref={ref} className="py-24 px-6" style={{ background: "#faf9f7" }}>
+    <section ref={ref} className="py-16 sm:py-24 px-6" style={{ background: "#faf9f7" }}>
       <div className="max-w-3xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.55 }}
         >
-          <h2 className="text-4xl font-bold mb-5" style={{ color: "#0D0D0D" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-5" style={{ color: "#0D0D0D" }}>
             Still have questions?
           </h2>
           <p className="text-lg mb-10 leading-relaxed" style={{ color: "#888" }}>
