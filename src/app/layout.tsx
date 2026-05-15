@@ -70,10 +70,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/logo-icon.png",
-  },
 };
 
 export const viewport: Viewport = {
@@ -93,7 +89,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <JsonLd data={[organizationSchema, websiteSchema]} />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [organizationSchema, websiteSchema],
+          }}
+        />
         {children}
         <MobileCTA />
       </body>

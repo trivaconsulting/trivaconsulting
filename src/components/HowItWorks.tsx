@@ -125,7 +125,7 @@ export default function HowItWorks() {
               transition={{ duration: 0.5, delay: 0.08 + i * 0.18 }}
             >
               <div
-                className="font-black font-mono mb-3 leading-none select-none"
+                className="font-black font-mono mb-3 leading-none select-none text-center"
                 style={{ fontSize: "3.5rem", color: "#E8541C" }}
               >
                 {step.number}
@@ -171,7 +171,7 @@ export default function HowItWorks() {
                 transition={{ duration: 0.5, delay: 0.08 + i * 0.15 }}
               >
                 <div
-                  className="font-black font-mono mb-3 leading-none select-none"
+                  className="font-black font-mono mb-3 leading-none select-none text-center"
                   style={{ fontSize: "2.5rem", color: "#E8541C" }}
                 >
                   {step.number}
